@@ -1,0 +1,20 @@
+name: mirror_leech_telegram_bot
+build:
+  mirror_leech_telegram_bot:
+    context: .
+    dockerfile: Dockerfile
+deploy:
+  - 'helm upgrade --install ${OKTETO_NAME} chart OKTETO_BUILD_MIRROR_LEECH_TELEGRAM_BOT_IMAGE'
+
+# dev:
+#   sample:
+#     image: okteto/dev:latest
+#     command: bash
+#     workdir: /usr/src/app
+#     sync:
+#       - .:/usr/src/app
+#     environment:
+#       - name=$USER
+#     forward:
+#       - 8080:80
+
